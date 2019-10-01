@@ -1,6 +1,5 @@
 const store = require('../store')
 
-
 const successMessage = function (newText) {
   $('#message').text(newText)
   $('#message').removeClass('failure')
@@ -65,7 +64,7 @@ const onNewGameFailure = function (responseData) {
 const onGetGamesSuccess = function (responseData) {
   successMessage('Successfully get games')
   console.log(responseData)
-  store.game = responseData.game
+
   console.log('store is', store)
   $('#number-games').text('Amount of played games is: ')
 }

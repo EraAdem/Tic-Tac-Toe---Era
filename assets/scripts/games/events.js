@@ -1,6 +1,8 @@
 'use strict'
+const api = require('./api')
+const ui = require('./ui')
 
-const gameBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+let gameBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
 //possibilities to win the game
 
@@ -116,7 +118,30 @@ const changeTurn = function () {
   }
 }
 
+const onNewGame = function (event) {
+  event.preventDefault()
+  // set player b ack to X
+  player = 'X'
+  // set gameboard array to original
+  gameBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+  // reset the html baord
+  $('.square').text('')
+  api.newGame()
+    .then(ui.onNewGameSuccess)
+    .catch(ui.onNewGameFailure)
+}
+
+const onGetGames = function (event) {
+  event.preventDefault()
+
+  api.getGames()
+    .then(ui.onGetGamesSuccess)
+    .catch(ui.onGetGamesFailure)
+}
+
 module.exports = {
   changeLetter,
-  checkSquare
+  checkSquare,
+  onNewGame,
+  onGetGames
 }

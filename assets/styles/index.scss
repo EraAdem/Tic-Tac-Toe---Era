@@ -1,6 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background-color: khaki;
 
+}
+
+h2 {
+  font-style: oblique;
+}
+
+title {
+  text-align: center;
+
+}
 .success {
   color: green;
 }
@@ -25,7 +37,9 @@
 
 .board-container {
   height: 100%;
-  width: 100%
+  width: 100%;
+  display: none
+
 }
 
 .board {
