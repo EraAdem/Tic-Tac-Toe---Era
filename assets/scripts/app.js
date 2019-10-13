@@ -9,12 +9,16 @@ const gameEvents = require('./games/events')
 
 $(() => {
   // your JS code goes here
+  $('#sign-out').hide()
+  $('#new-game').hide()
 
+  $('#change-password').hide()
+  $('#get-games').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
-  $('#new-game').on('click', gameEvents.onNewGame)
+  $('#new-game').on('submit', gameEvents.onNewGame)
   $('#get-games').on('submit', gameEvents.onGetGames)
   $('.square').on('click', gameEvents.changeLetter)
 })

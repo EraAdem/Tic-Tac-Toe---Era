@@ -4,108 +4,106 @@ const ui = require('./ui')
 
 let gameBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
-//possibilities to win the game
-
 // const winPoss = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
 
 let player = 'X'
-
-// change the player
+let num = 0
+let gameOver = false
 
 const changeLetter = function (event) {
-  console.log(event.target)
   if ($(event.target).text() === '') {
+    api.updateGame(event.target.id, player, gameOver)
+      .then(ui.onUpdateGameSuccess)
+      .catch(ui.onUpdateGameFailure)
     if (player === 'X') {
       player = 'O'
       $(event.target).text('X')
       gameBoard[event.target.id] = 'X'
-      console.log(gameBoard)
     } else if (player === 'O') {
       player = 'X'
       $(event.target).text('O')
       gameBoard[event.target.id] = 'O'
-      console.log(gameBoard)
     }
   } else {
     checkSquare(event)
   }
+
   changeTurn()
   winGame()
+  checkDraw()
 }
 
 const winGame = function () {
   if (gameBoard[0] === 'X' && gameBoard[1] === 'X' && gameBoard[2] === 'X') {
-    console.log('You are the winner!')
-    $('#new-message').text('You are the winner!')
-
+    gameOver = true
+    $('#new-message').text('Player X is the winner!')
+    // make the square unclickable if it is pressed once
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[0] === 'O' && gameBoard[1] === 'O' && gameBoard[2] === 'O') {
-    console.log('You win')
-    $('#new-message').text('You are the winner!')
+    gameOver = true
+    $('#new-message').text('Player O is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[3] === 'X' && gameBoard[4] === 'X' && gameBoard[5] === 'X') {
-    console.log('You win!')
-    $('#new-message').text('You are the winner')
+    gameOver = true
+    $('#new-message').text('Player X is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[3] === 'O' && gameBoard[4] === 'O' && gameBoard[5] === 'O') {
-    console.log('You win!')
-    $('#new-message').text('You are the winner')
+    gameOver = true
+    $('#new-message').text('Player O is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[6] === 'X' && gameBoard[7] === 'X' && gameBoard[8] === 'X') {
-    console.log('You win')
-    $('#new-message').text('You are the winner!')
+    gameOver = true
+    $('#new-message').text('Player X is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[6] === 'O' && gameBoard[7] === 'O' && gameBoard[8] === 'O') {
-    console.log('You win!')
-    $('#new-message').text('You are the winner!')
+    gameOver = true
+    $('#new-message').text('Player O is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[0] === 'X' && gameBoard[3] === 'X' && gameBoard[6] === 'X') {
-    console.log('You win!')
-    $('#new-message').text('You are the winner!')
+    gameOver = true
+    $('#new-message').text('Player X is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[0] === 'O' && gameBoard[3] === 'O' && gameBoard[6] === 'O') {
-    console.log('You win!')
-    $('#new-message').text('You are the winner!')
+    gameOver = true
+    $('#new-message').text('Player O is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[1] === 'X' && gameBoard[4] === 'X' && gameBoard[7] === 'X') {
-    console.log('You win')
-    $('#new-message').text('You are the winner!')
+    gameOver = true
+    $('#new-message').text('Player X is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[1] === 'O' && gameBoard[4] === 'O' && gameBoard[7] === 'O') {
-    console.log('You win!')
-    $('#new-message').text('You are the winner!')
+    gameOver = true
+    $('#new-message').text('Player O is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[2] === 'X' && gameBoard[5] === 'X' && gameBoard[8] === 'X') {
-    console.log('You win!')
-    $('#new-message').text('You are the winner!')
+    gameOver = true
+    $('#new-message').text('Player X is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[2] === 'O' && gameBoard[5] === 'O' && gameBoard[8] === 'O') {
-    console.log('You win!')
-    $('#new-message').text('You are the winner!')
+    gameOver = true
+    $('#new-message').text('Player O is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[0] === 'X' && gameBoard[4] === 'X' && gameBoard[8] === 'X') {
-    console.log('You win')
-    $('#new-message').text('You are the winner!')
+    gameOver = true
+    $('#new-message').text('Player X is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[0] === 'O' && gameBoard[4] === 'O' && gameBoard[8] === 'O') {
-    console.log('You win!')
-    $('#new-message').text('You are the winner!')
+    gameOver = true
+    $('#new-message').text('Player O is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[2] === 'X' && gameBoard[4] === 'X' && gameBoard[6] === 'X') {
-    console.log('You win')
-    $('#new-message').text('you You are the winner!')
-    $('#message').text('You are the winner!')
+    gameOver = true
+    $('#new-message').text('Player X is the winner!')
     $('.square').css('pointer-events', 'none')
   } else if (gameBoard[2] === 'O' && gameBoard[4] === 'O' && gameBoard[6] === 'O') {
-    console.log('You win!')
-    $('#new-message').text('You are the winner!')
+    gameOver = true
+    $('#new-message').text('Player O is the winner!')
     $('.square').css('pointer-events', 'none')
   }
 }
 
 const checkSquare = function (event) {
   if ($(event.target === 'true')) {
-    console.log('Invalid move')
     $('#new-message').text('Invalid Move')
   }
 }
@@ -118,13 +116,29 @@ const changeTurn = function () {
   }
 }
 
+const checkDraw = function () {
+  num++
+  if (num === 9 && gameOver === false) {
+    $('#new-message').text('It is a tie!')
+
+    $('.square').css('pointer-events', 'none')
+  } else if (num === 9 && gameOver === true) {
+    $('#new-message').text(' Player X wins!')
+    setTimeout(function () { $('#new-message').text('') }, 1000)
+    $('.square').css('pointer-events', 'none')
+  }
+}
+
 const onNewGame = function (event) {
   event.preventDefault()
-  // set player b ack to X
+  $('.square').css('pointer-events', 'auto')
+  // set player back to X
   player = 'X'
   // set gameboard array to original
   gameBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-  // reset the html baord
+  gameOver = false
+  num = 0
+  // reset the html board
   $('.square').text('')
   api.newGame()
     .then(ui.onNewGameSuccess)
@@ -143,5 +157,4 @@ module.exports = {
   changeLetter,
   checkSquare,
   onNewGame,
-  onGetGames
-}
+  onGetGames }

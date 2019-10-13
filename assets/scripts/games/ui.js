@@ -17,25 +17,34 @@ const failureMessage = function (newText) {
 const onNewGameSuccess = function (responseData) {
   successMessage('Successfully created game')
   store.game = responseData.game
-  console.log('store is', store)
+  setTimeout(function () { $('#message').text('') }, 1000)
   $('.board-container').show()
 }
 const onNewGameFailure = function (responseData) {
   failureMessage('You have not created a new game')
+  setTimeout(function () { $('#message').text('') }, 1000)
   store.game = responseData.game
-  console.log('store is', store)
 }
 
 const onGetGamesSuccess = function (responseData) {
   successMessage('Successfully get games')
-  console.log(responseData)
+  setTimeout(function () { $('#message').text('') }, 1000)
 
-  console.log('store is', store)
   $('#number-games').text('Amount of played games is:' + responseData.games.length)
+  setTimeout(function () { $('#number-games').text('') }, 1000)
+}
+
+const onUpdateGameFailure = function (responseData) {
+  failureMessage('You have not updated a new game')
+}
+const onUpdateGameSuccess = function (responseData) {
+  // successMessage('Successfully updated games')
 }
 
 module.exports = {
   onNewGameSuccess,
   onNewGameFailure,
-  onGetGamesSuccess
+  onGetGamesSuccess,
+  onUpdateGameFailure,
+  onUpdateGameSuccess
 }

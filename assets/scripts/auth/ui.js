@@ -14,59 +14,70 @@ const failureMessage = function (newText) {
 
 const onSignInSuccess = function (responseData) {
   successMessage('Signed in successfully!')
-  console.log('responseData is', responseData)
+
   store.user = responseData.user
-  console.log('store is', store)
+  $('.passwordempty').val('')
+  $('.emailempty').val('')
+  setTimeout(function () { $('#message').text('') }, 1000)
+
+  $('#sign-out').show()
+  $('#new-game').show()
+  $('#change-password').show()
+  $('#get-games').show()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
 }
 const onSignInFailure = function () {
   failureMessage('Sign in failed!')
-  console.log('Sign in failed')
+
+  setTimeout(function () { $('#message').text('') }, 1000)
+  $('.passwordempty').val('')
+  $('.emailempty').val('')
 }
 
 const onSignUpSuccess = function () {
   successMessage('Signed up successfully!')
-  console.log('Signed up successfully!')
+
+  setTimeout(function () { $('#message').text('') }, 1000)
+  $('.passwordempty').val('')
+  $('.emailempty').val('')
 }
 const onSignUpFailure = function () {
   failureMessage('Sign up failed!')
-  console.log('Sign up failed!')
+  setTimeout(function () { $('#message').text('') }, 1000)
+
+  $('.passwordempty').val('')
+  $('.emailempty').val('')
 }
 
 const onChangePasswordSuccess = function () {
   successMessage('Changed password successfully!')
-  console.log('Changed password successfully!')
+
+  setTimeout(function () { $('#message').text('') }, 1000)
+  $('.passwordempty').val('')
 }
 const onChangePasswordFailure = function () {
   failureMessage('Change password failed!')
-  console.log('Change password failed!')
+
+  setTimeout(function () { $('#message').text('') }, 1000)
+  $('.passwordempty').val('')
 }
 
 const onSignOutSuccess = function () {
   successMessage('Signed out successfully!')
-  console.log('Signed out successfully!')
+
+  setTimeout(function () { $('#message').text('') }, 1000)
+  $('.emailempty').val('')
+  $('#sign-out').hide()
+  $('#new-game').hide()
+  $('#change-password').hide()
+  $('#get-games').hide()
+  $('#sign-up').show()
+  $('#sign-in').show()
 }
 const onSignOutFailure = function () {
   failureMessage('Sign out failed!')
-  console.log('Sign out failed!')
-}
-
-const onNewGameSuccess = function (responseData) {
-  successMessage('Successfully updated game')
-  store.game = responseData.game
-  console.log('store is', store)
-}
-const onNewGameFailure = function (responseData) {
-  failureMessage('You have not created a new game')
-  store.game = responseData.game
-  console.log('store is', store)
-}
-
-const onGetGamesSuccess = function (responseData) {
-  successMessage('Successfully get games')
-  console.log(responseData)
-
-  console.log('store is', store)
-  $('#number-games').text('Amount of played games is: ')
+  setTimeout(function () { $('#message').text('') }, 1000)
 }
 
 module.exports = {
@@ -77,8 +88,6 @@ module.exports = {
   onChangePasswordFailure,
   onChangePasswordSuccess,
   onSignOutFailure,
-  onSignOutSuccess,
-  onNewGameSuccess,
-  onNewGameFailure,
-  onGetGamesSuccess
+  onSignOutSuccess
+
 }

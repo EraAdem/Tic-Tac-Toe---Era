@@ -27,7 +27,34 @@ const getGames = (data) => {
   })
 }
 
+// Update a game by storing new moves. (UPDATE)
+
+// PATCH request after each player move
+
+const updateGame = function (index, value, over) {
+  const dataObj = {
+    game: {
+      cell: {
+        index: index,
+        value: value
+      },
+      over: over
+    }
+  }
+
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: dataObj
+  })
+}
+
 module.exports = {
   newGame,
-  getGames
+  getGames,
+  updateGame
+
 }

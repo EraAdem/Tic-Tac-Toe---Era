@@ -1,80 +1,87 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <title>Tic Tac Toe</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Tic Tac Toe</h1>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>Tic Tac Toe</h1>
 
 
 
-      <h2>Sign-up</h2>
-      <form id='sign-up'>
-        <input type="email" name="credentials[email]" placeholder='Enter email...' >
-        <input type="password" name="credentials[password]" placeholder='Enter password'>
-        <input type="password" name="credentials[password_confirmation]" placeholder='Enter password again'>
-        <button>Sign Up</button>
-      </form>
 
-      <h2>Sign-in</h2>
-        <h2 id="message"></h2>
-      <form id='sign-in'>
-        <input type="email" name="credentials[email]" placeholder='Enter email...' >
-        <input type="password" name="credentials[password]" placeholder='Enter password'>
-        <button>Sign In</button>
-      </form>
-      <form id="change-password" class="border">
-          <fieldset>
-            <legend>Change Password!</legend>
-            <input type="password" name="passwords[old]" placeholder="Old Password">
-            <input type="password" name="passwords[new]" placeholder="New Password">
-            <input type="submit" value="Change Password">
-          </fieldset>
-        </form>
-        <h2>Sign out</h2>
-              <form id='sign-out'>
-                <button>Sign out</button>
-              </form>
+  <form id='sign-up'>
+    <legend>Sign-up</legend>
+    <input type="email" name="credentials[email]" placeholder='Enter email...' class='emailempty'>
+    <input type="password" name="credentials[password]" placeholder='Enter password' class='passwordempty'>
+    <input type="password" name="credentials[password_confirmation]" placeholder='Enter password again' class='passwordempty'>
+    <button>Sign Up</button>
+  </form>
 
-            </form>
-            <h2>New Game</h2>
 
-                  <form id='new-game'>
-                    <button>New Game</button>
-                  </form>
-                </form>
-                <h2>Get Games</h2>
-                      <form id="get-games">
-                        <button>Get Games</button>
-                      </form>
-          <h2 id="number-games"></h2>
-                 <h2 id="new-message"></h2>
-              <div>
-              <div class="board-container flex-container flex-column flex-center">
+  <h2 id="message"></h2>
+  <form id='sign-in'>
+    <legend>Sign-in</legend>
+    <input type="email" name="credentials[email]" placeholder='Enter email...' class='emailempty'>
+    <input type="password" name="credentials[password]" placeholder='Enter password' class='passwordempty'>
+    <button>Sign In</button>
+  </form>
 
-                  <div class="board flex-container flex-wrap ">
-                      <div class="square flex-container flex-center"id="0"></div>
-                      <div class="square flex-container flex-center"id="1"></div>
-                      <div class="square flex-container flex-center"id="2"></div>
-                      <div class="square flex-container flex-center"id="3"></div>
-                      <div class="square flex-container flex-center"id="4"></div>
-                      <div class="square flex-container flex-center"id="5"></div>
-                      <div class="square flex-container flex-center"id="6"></div>
-                      <div class="square flex-container flex-center"id="7"></div>
-                      <div class="square flex-container flex-center"id="8"></div>
-                  </div>
-              </div>
-          </div>
-          <br>
-          <br>
-          <br>
-    </body>
+  <form id="change-password" class="border">
+    <fieldset>
+      <legend>Change Password</legend>
+      <input type="password" name="passwords[old]" placeholder="Old Password" class='passwordempty'>
+      <input type="password" name="passwords[new]" placeholder="New Password" class='passwordempty'>
+      <input type="submit" value="Change Password">
+    </fieldset>
+  </form>
+<br>
+
+  <form id='sign-out'>
+    <legend>Sign-out</legend>
+    <button>Sign out</button>
+  </form>
+
+  <form id='new-game'>
+    <legend>New Game</legend>
+    <button type="submit">New Game</button>
+  </form>
+
+  <h2  id="message"</h2>
+  <form id="get-games">
+    <legend>Get Games</legend>
+    <button>Get Games</button>
+  </form>
+  <h2 id="number-games"></h2>
+  <h2 id="new-message"></h2>
+  <div>
+    <div class="board-container flex-container flex-column flex-center">
+
+      <div class="board flex-container flex-wrap ">
+        <div class="square flex-container flex-center" id="0"></div>
+        <div class="square flex-container flex-center" id="1"></div>
+        <div class="square flex-container flex-center" id="2"></div>
+        <div class="square flex-container flex-center" id="3"></div>
+        <div class="square flex-container flex-center" id="4"></div>
+        <div class="square flex-container flex-center" id="5"></div>
+        <div class="square flex-container flex-center" id="6"></div>
+        <div class="square flex-container flex-center" id="7"></div>
+        <div class="square flex-container flex-center" id="8"></div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+</body>
+
 </html>
