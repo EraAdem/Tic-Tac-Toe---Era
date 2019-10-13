@@ -22,23 +22,23 @@ Looking back, when I was building the game logic, this part was not easy and at 
 ## User Stories
 
 
-*As a user I want to have a functional game.
-*As a user I want to sign in/up.
-*As a user I want to start a new game.
-*As a user I want to change password.
-*As a user I want to get the number of games played.
-*As a user I want to have an interactive and visually interactive interface.
-*As a user I want to have a functional game.
+1. As a user I want to have a functional game.
+2. As a user I want to sign in/up.
+3. As a user I want to start a new game.
+4. As a user I want to change password.
+5. As a user I want to get the number of games played.
+6. As a user I want to have an interactive and visually interactive interface.
+7. As a user I want to have a functional game.
 
 ## Technologies Used
 
-*Javascript
-*jQuery
-*AJAX
-*DOM
-*HTML
-*CSS
-*Bootstrap
+1. Javascript
+2. jQuery
+3. AJAX
+4. DOM
+5. HTML
+6. CSS
+7. Bootstrap
 
 
 ### Unsolved Problems
