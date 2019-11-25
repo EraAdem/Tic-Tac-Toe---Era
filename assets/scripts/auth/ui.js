@@ -74,6 +74,8 @@ const onSignOutSuccess = function () {
   $('#get-games').hide()
   $('#sign-up').show()
   $('#sign-in').show()
+  $('.board-container').hide()
+  $('#new-message').hide()
 }
 const onSignOutFailure = function () {
   failureMessage('Sign out failed!')

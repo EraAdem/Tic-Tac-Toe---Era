@@ -1,7 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  background-color: khaki;
+
+background-image: url(https://cache.desktopnexus.com/thumbseg/554/554834-bigthumbnail.jpg)
+
+
 
 }
 
@@ -13,8 +16,15 @@ h2 {
 
 h1  {
   text-align: center;
-
+  font-size: 60px;
+  font-family: cursive;
+  font-style: oblique;
+  font-size-adjust: auto;
+  font-weight: 300 ;
+  color:#9370DB;
 }
+
+
 .success {
   color: green;
 }
@@ -47,16 +57,65 @@ h1  {
 .board {
   width: 618px;
   margin: auto;
-
-
+  color:white
 
 }
 
 .square {
   width: 200px;
-      height: 100px;
-      /* add below this second */
-      border: 2px solid mediumslateblue;
-      font-size: 56px;
+  height: 100px;
+  /* add below this second */
+  border: 2px solid mediumslateblue;
+  font-size: 56px;
 
   }
+button {
+  background-color: #9370DB;
+  letter-spacing: 2px;
+  font-size: 12px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-bottom-width: 3px;
+  }
+button:hover {
+    background-color: #e3e3e3;
+    border-color: rgba(0,0,0,0.5);
+     }
+
+ button:active {
+  background-color: #CCC;
+  border-color: rgba(0,0,0,0.9);
+     }
+ #sign-up {
+   color: #9370DB;
+   font-family:cursive
+     }
+
+ #sign-in {
+  color: #9370DB;
+  font-family:cursive
+         }
+#new-game {
+  color: white;
+  font-family: cursive;
+                 }
+#sign-out {
+  color: white;
+  font-family:cursive;
+}
+
+#change-password {
+    color: white;
+    font-family:cursive;
+                   }
+
+ #get-games {
+      color: white;
+      font-family:cursive;
+    }
+
+#new-message{
+        color: white;
+        font-family:cursive;
+      }
