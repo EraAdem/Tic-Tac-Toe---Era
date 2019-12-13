@@ -1,7 +1,8 @@
 
 
-
  #  *Welcome to my Tic Tac Toe game*
+ 
+ ![Tic Tac Toe](https://user-images.githubusercontent.com/54282250/70761381-0006f580-1d1b-11ea-956e-95b9d323445a.png)
 
 
  ## Description
